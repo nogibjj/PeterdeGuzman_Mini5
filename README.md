@@ -1,4 +1,4 @@
- # This is a README for IDS 706 Mini Project 4
+ # This is a README for IDS 706 Mini Project 5
 
 ## Note: this repository is identical to Individual Project 1, with the exception of an added Github Actions Matrix. 
 
