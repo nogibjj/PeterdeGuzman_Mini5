@@ -17,25 +17,34 @@ def load(dataset="pollingplaces_2020.csv"):
             CREATE TABLE pollingplaces_2020 (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             election_dt DATE,
-            county_name, 
-            polling_place_id,
-            polling_place_name,
-            precinct_name,
-            house_num,
-            street_name, 
-            city,
-            state,
-            zip,
+            county_name TEXT, 
+            polling_place_id INTEGER,
+            polling_place_name TEXT,
+            precinct_name TEXT,
+            house_num INTEGER,
+            street_name TEXT, 
+            city TEXT,
+            state TEXT,
+            zip TEXT,
             )
             """
     )
     # insert values
     c.executemany(
         """
-            INSERT INTO pollingplaces_2020
-            # col names
-            # Values
-            """,
+            INSERT INTO pollingplaces_2020 (
+            election_dt, 
+            county_name,
+            polling_place_id,
+            polling_place_name,
+            precinct_name, 
+            house_num,
+            street_name,
+            city,
+            state,
+            zip
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
         payload,
     )
     conn.commit()
