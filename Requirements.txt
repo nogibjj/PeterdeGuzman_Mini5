@@ -11,4 +11,3 @@ ruff==0.0.284
 pandas
 matplotlib
 numpy
-sqlite3

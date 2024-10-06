@@ -8,8 +8,12 @@ import os
 
 def extract(
     url="https://s3.amazonaws.com/dl.ncsbe.gov/ENRS/2020_11_03/polling_place_20201103.csv",
-    filepath="pollingplaces_2020.csv",
+    filepath="data/pollingplaces_2020.csv",
+    directory="data",
 ):
+    """Extract to file path"""
+    if not os.path.exists(directory):
+        os.makedirs(directory)
     with requests.get(url, timeout=5) as r:
         with open(filepath, "wb") as f:
             f.write(r.content)
