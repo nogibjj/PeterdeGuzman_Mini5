@@ -9,8 +9,8 @@ import csv
 
 
 def load(dataset="./data/pollingplaces_2020.csv"):
-    payload = csv.reader(open(dataset, newline="", encoding="utf-16"), delimiter="\t")
-    payload_withoutnull = ["" if item == b"\x00" else item for item in payload]
+    data = open(dataset, newline="", encoding="utf-16")
+    payload = csv.reader((line.replace("\0", "") for line in data), delimiter="\t")
     conn = sqlite3.connect("pollingplaces_2020.db")
     c = conn.cursor()
     # generate new table for the database
@@ -47,7 +47,7 @@ def load(dataset="./data/pollingplaces_2020.csv"):
             zip)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
             """,
-        payload_withoutnull,
+        payload,
     )
     conn.commit()
     conn.close()
