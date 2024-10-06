@@ -10,7 +10,7 @@ def test_functions():
 
 
 if __name__ == "__main__":
-    assert test_functions()["extract_to"] == "./data/pollingplaces_2020.csv"
+    assert test_functions()["extract_to"] == "/data/pollingplaces_2020.csv"
     assert test_functions()["transform"] == "pollingplaces2020_db"
     assert test_functions()["create"] == "Create Success"
     assert test_functions()["read"] == "Read Success"
