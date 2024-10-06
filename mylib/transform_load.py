@@ -6,7 +6,7 @@ import sqlite3
 import csv
 
 
-def load(dataset="pollingplaces_2020.csv"):
+def load(dataset="./data/pollingplaces_2020.csv"):
     payload = csv.reader(open(dataset, newline="", encoding="utf-16"), delimiter="\t")
     conn = sqlite3.connect("pollingplaces_2020.db")
     c = conn.cursor()
