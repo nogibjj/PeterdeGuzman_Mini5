@@ -7,7 +7,7 @@ import csv
 
 
 def load(dataset="pollingplaces_2020.csv"):
-    payload = csv.reader(open(dataset, newline="", encoding="utf-8"), delimiter=",")
+    payload = csv.reader(open(dataset, newline="", encoding="utf-16"), delimiter="\t")
     conn = sqlite3.connect("pollingplaces_2020.db")
     c = conn.cursor()
     # generate new table for the database
@@ -25,8 +25,7 @@ def load(dataset="pollingplaces_2020.csv"):
             street_name TEXT, 
             city TEXT,
             state TEXT,
-            zip TEXT,
-            )
+            zip TEXT)
             """
     )
     # insert values
@@ -42,9 +41,9 @@ def load(dataset="pollingplaces_2020.csv"):
             street_name,
             city,
             state,
-            zip
-            )
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            zip)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) 
+            """,
         payload,
     )
     conn.commit()
