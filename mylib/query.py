@@ -15,7 +15,7 @@ def query_create():
         (election_dt,county_name,polling_place_id, polling_place_name, precinct_name, 
         house_num, street_name, city, state,zip) 
         VALUES(11/03/2020, 'DURHAM', 99, 'GROSS HALL', 'DUKE MIDS', 
-        140, 'SCIENCEDRIVE', 'DURHAM', 'NC', '27708')
+        140, 'SCIENCE DRIVE', 'DURHAM', 'NC', '27708')
         """
     )
     conn.close()
