@@ -15,6 +15,9 @@ More information and a link to the data is available at: https://www.ncsbe.gov/r
 - In the `mylib` directory, `extract.py` extracts the raw data from the link to the NCSBE website. The `transform_load.py` script transforms the raw data from `.csv` to a `.db` SQLite database and creates a new connection.
 - The `query.py` script includes the Create, Read, Update, and Delete (CRUD) operations to execute various SQL operations. 
 
+### Proof of Successful Database Operations
+- Please view the "main.ipynb" notebook to view proof of successful database operations. 
+
 ### Test:
 ![alttext](proof_test.png)
 
