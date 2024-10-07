@@ -42,6 +42,9 @@ PeterdeGuzman_Mini5/
 ├── proof_test.png
 ├── pllingplaces_2020.db
 ├── main.py
+├── main.ipynb
+├── main.html
+├── main.pdf
 ├── Makefile
 ├── README.md
 ├── Requirements.txt
